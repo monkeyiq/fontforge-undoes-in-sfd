@@ -3085,6 +3085,7 @@ return;
 #else
     {
 #endif
+	printf("SCReinstanciateRefChar() layer_count:%d sc:%p\n",rf->layer_cnt,rf->sc);
 	if ( rf->layer_cnt>0 ) {
 	    SplinePointListsFree(rf->layers[0].splines);
 	    rf->layers[0].splines = NULL;
@@ -3094,6 +3095,7 @@ return;
 #ifdef FONTFORGE_CONFIG_TYPE3
 	rf->layers[0].dofill = true;
 #endif
+	printf("splines:%p\n",rf->sc->layers[layer].splines);
 	new = SplinePointListTransform(SplinePointListCopy(rf->sc->layers[layer].splines),rf->transform,tpt_AllPoints);
 	rf->layers[0].splines = new;
 	last = NULL;

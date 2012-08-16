@@ -3560,6 +3560,7 @@ return;
 	    gevent.u.chr.keysym = keysym;
 	    gevent.u.chr.chars[0] = '\0';
 	}
+
 	/*
 	 * If we are a charup, but the very next XEvent is a chardown
 	 * on the same key, then we are just an autorepeat XEvent which
@@ -3880,6 +3881,7 @@ return;
 #endif
       break;
     }
+
     if ( gevent.type != et_noevent && gw!=NULL && gw->eh!=NULL )
 	(gw->eh)((GWindow) gw, &gevent);
     if ( event->type==DestroyNotify && gw!=NULL )
